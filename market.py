@@ -73,8 +73,8 @@ class Market:
                 competitors_prices = prices[:n] + prices[n+1:]
                 new_prices += [self.firms[n].best_response(competitors, competitors_prices)]
             error = max([abs(prices[n] - new_prices[n]) for n in range(len(self.firms))])[0]
-            print(new_prices)
-            print(error)
+            print('Finding prices ... {}'.format(new_prices))
+            print('Error: {}'.format(error))
             count += 1
             prices = new_prices
         return new_prices
